@@ -63,7 +63,6 @@ public class EquipeTest {
     private HttpResponse<String> post(String json) throws Exception {
         return http.send(HttpRequest.newBuilder()
                         .uri(URI.create(urlBase))
-                        .header("Content-Type", "application/json")
                         .POST(HttpRequest.BodyPublishers.ofString(json))
                         .build(),
                         HttpResponse.BodyHandlers.ofString());
@@ -80,7 +79,6 @@ public class EquipeTest {
     private HttpResponse<String> put(int id, String json) throws Exception {
         return http.send(HttpRequest.newBuilder()
                         .uri(URI.create(urlBase + "/" + id))
-                        .header("Content-Type", "application/json")
                         .PUT(HttpRequest.BodyPublishers.ofString(json))
                         .build(),
                         HttpResponse.BodyHandlers.ofString());
